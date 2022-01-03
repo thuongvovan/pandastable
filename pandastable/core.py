@@ -3537,7 +3537,13 @@ class Table(Canvas):
         if filename == None:
             filename = filedialog.asksaveasfilename(parent=self.master,
                                                      initialdir = self.currentdir,
-                                                     filetypes=[("pickle","*.pickle"),
+                                                     filetypes=[
+                                                                ("xlsx","*.xlsx"),
+                                                                ("xls","*.xls"),
+                                                                ("pickle","*.pickle"),
+                                                                ("csv","*.csv"),
+                                                                ("tsv","*.tsv"),
+                                                                ("txt","*.txt"),
                                                                 ("All files","*.*")])
         if filename:
             self.model.save(filename)
@@ -3635,7 +3641,8 @@ class Table(Canvas):
                                                       defaultextension='.csv',
                                                       initialdir = os.getcwd(),
                                                       filetypes=[("csv","*.csv"),
-                                                           ("excel","*.xls"),
+                                                           ("xlsx","*.xlsx"),
+                                                           ("xls","*.xls"),
                                                            ("html","*.html"),
                                                         ("All files","*.*")])
         if filename:

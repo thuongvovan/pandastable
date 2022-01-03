@@ -126,11 +126,17 @@ class TableModel(object):
 
         ftype = os.path.splitext(filename)[1] 
         if ftype == '.pickle':
-            self.df.to_pickle(filename)
+            self.df.to_pickle(filename, index=False)
         elif ftype == '.xls':
-            self.df.to_excel(filename)
+            self.df.to_excel(filename, index=False)
+        elif ftype == '.xlsx':
+            self.df.to_excel(filename, index=False)
         elif ftype == '.csv':
-            self.df.to_csv(filename)
+            self.df.to_csv(filename, index=False)
+        elif ftype == '.txt':
+            self.df.to_csv(filename, index=False)
+        elif ftype == '.tsv':
+            self.df.to_csv(filename, sep='\t', index=False)
         #elif ftype == '.html':
         #    self.df.to_html(filename)
         return
